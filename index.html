@@ -1,0 +1,155 @@
+<html lang="en" class="mdl-js"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="mdl-layout__container has-scrolling-header"><div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100 is-upgraded" data-upgraded=",MaterialLayout">
+      
+      
+<div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            
+            <h3 style="
+    margin-top: 0px;
+">Configuring pfSense</h3>
+              <p>In a network environment where multiple VLANs are required, pfSense can serve as a powerful and versatile main router. By leveraging its capabilities, you can easily set up VLANs and manage the traffic flow. In this section, we will explore the process of configuring pfSense to connect with OpenWrt using VLANs.
+
+</p>
+              <p>To begin, access the pfSense web interface by entering the appropriate IP address in your web browser. Once logged in, navigate to the "Interfaces" section and select "Assignments." This page displays all the available interfaces and their current assignments.
+
+</p>
+              <p>Within the "Assignments" page, locate the "VLANs" tab and click on it. This tab allows you to manage all the VLANs associated with pfSense. To create a new VLAN, click the "Add" button and provide the necessary information.
+
+</p>
+            <p>When adding a VLAN, you will need to specify a VLAN Tag number and provide a brief Description for easy identification. The VLAN Tag is a numerical identifier used to distinguish the VLAN from others. Additionally, you will need to select the appropriate Parent interface, which determines the physical or virtual interface associated with the VLAN. For example, you may choose to assign the VLAN to the LAN interface or the WAN interface.
+
+
+</p><p>After configuring the VLAN settings, click "Save" to create the VLAN. Repeat this process for each VLAN you wish to set up. By creating multiple VLANs, you can separate network traffic and apply different security policies or bandwidth restrictions to each VLAN.
+
+</p><h3>Integrating OpenWrt as a Dumb Access Point</h3>
+              
+              <p>Once the VLANs are established on pfSense, the next step is to integrate OpenWrt as a dumb access point. OpenWrt, a popular open-source firmware, offers flexible networking capabilities and can be configured to function as a simple wireless access point within your network.
+
+</p>
+              <p>To begin, connect the OpenWrt device to your network, ensuring it is physically connected to the appropriate port on the pfSense router. Once the physical connection is established, access the OpenWrt web interface by entering its IP address in your web browser.
+
+</p>
+              <p>In the OpenWrt web interface, navigate to the Network section and select "Interfaces." Here, you will find a list of available interfaces. Locate the LAN interface and click on "Edit" to configure its settings.
+
+</p>
+              <p>Within the LAN interface settings, select "Bridge" as the Protocol. This configuration allows the LAN interface to function as a bridge, connecting the OpenWrt device to the main pfSense router.
+
+</p>
+              <p>Next, click on the "Physical Settings" tab and select the appropriate network port where the OpenWrt device is connected. Ensure that this port corresponds to one of the VLANs you configured on pfSense.
+
+</p>
+              <p>
+Save the changes and restart the OpenWrt device. Upon reboot, the OpenWrt device will operate as a dumb access point, forwarding all network traffic to the pfSense router while adhering to the VLAN configurations set on pfSense.
+
+              </p>
+              <p>By connecting OpenWrt as a dumb access point in this manner, you can extend the reach of your network and provide wireless connectivity while maintaining the VLAN segmentation and centralized control offered by pfSense.
+
+</p><p>In conclusion, by configuring pfSense with VLANs and integrating OpenWrt as a dumb access point, you can create a secure and efficient network infrastructure. This setup allows for the effective management of network traffic, the implementation of different security policies across VLANs, and the extension of wireless connectivity without compromising the integrity of the VLAN configurations established on pfSense.
+
+
+
+
+</p>
+<h3>Notice:</h3>
+<p>Some instructions in this article may be incorrect. We highly recommend watching the detailed YouTube video for this process, as it is up-to-date and contains all of the correct information to set up VLANs with pfSense and openWRT.
+</p>
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+              <li><a href="#">Website by Jonas Whatley</a></li>
+              
+              
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div></div>
+    
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script>
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
